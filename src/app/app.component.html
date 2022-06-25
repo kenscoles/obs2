@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  Reusable Confirmation Dialog
+</mat-toolbar>
+<br>
+<mat-card class="example-card">
+    <mat-card-title>Card Title</mat-card-title>
+    <mat-card-subtitle>Card subtitle</mat-card-subtitle>
+    <mat-card-content>
+      <p>{{reply}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class='button' mat-raised-button (click)="yesNoDialog()">YES/NO</button>
+      <button class= 'button' mat-raised-button (click)="confirmCancelDialog()">CONFIRM/CANCEL</button>
+    </mat-card-actions>
+  </mat-card>
+  <button class='button' mat-raised-button (click)="test()">test</button>

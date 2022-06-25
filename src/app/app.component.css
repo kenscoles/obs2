@@ -1,0 +1,13 @@
+.example-card {
+    max-width: 400px;
+    background-color:darkgreen;
+    color: coral;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.button {
+  background-color:rgb(196, 219, 63);
+}
