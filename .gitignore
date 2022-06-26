@@ -40,22 +40,4 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-src/app/app.component.spec.ts
-src/app/app.component.spec.ts
-angular.json
-package-lock.json
-package.json
-src/index.html
-src/styles.css
-src/app/app.component.css
-src/app/app.component.html
-src/app/app.component.spec.ts
-src/app/app.component.ts
-src/app/app.module.ts
-src/app/component.service.ts
-src/app/dialogs/confirm/confirm.component.css
-src/app/dialogs/confirm/confirm.component.html
-src/app/dialogs/confirm/confirm.component.spec.ts
-src/app/dialogs/confirm/confirm.component.ts
-src/app/models/confirm-dialog-data.ts
-src/app/services/dialog.service.ts
+
