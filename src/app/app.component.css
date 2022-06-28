@@ -11,3 +11,6 @@
 .button {
   background-color:rgb(196, 219, 63);
 }
+mat-card-content {
+  color: beige;
+}
