@@ -8,7 +8,7 @@ import { ConfirmDialogData } from 'src/app/models/confirm-dialog-data';
   providedIn: 'root',
 })
 export class DialogService {
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog) { }
 
   confirmDialog(data: ConfirmDialogData): Observable<boolean> {
     return this.dialog
@@ -19,4 +19,15 @@ export class DialogService {
       })
       .afterClosed();
   }
+  //////experimental
+  Yes_No_Prompt(data: ConfirmDialogData): Observable<boolean> {
+    const yesNoDialog = this.dialog.open(ConfirmComponent, {
+      data,
+      width: '400px',
+      disableClose: true,
+    });
+
+    return yesNoDialog.afterClosed();
+  }
+  /////////////////////////
 }

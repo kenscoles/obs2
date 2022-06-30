@@ -76,11 +76,20 @@ export class AppComponent {
       });
       return this.ok; 
     }
-   async test(){
-    this.ok =  this.myConfirmCancelDialog();
-    console.log(this.ok);
-      //this.reply = 'worked??';
-    
+    test(){
+
+      this.dialog.Yes_No_Prompt({
+        title: 'Please Confirm Action',
+        message: 'Do you want to save the file?',
+        confirmCaption: 'Yes',
+        cancelCaption: 'No',
+      }).subscribe(result => {
+        if(result) {
+          console.log('true');// something is true (pressed yes)
+        } else {
+          console.log('false');// something if false (pressed no)
+        } 
+     }); 
   }
   ////
 }
