@@ -14,3 +14,8 @@
 mat-card-content {
   color: beige;
 }
+:host {
+  display: block;
+  background-color: rgb(174, 185, 174);
+ }
+ 

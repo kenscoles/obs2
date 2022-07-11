@@ -12,5 +12,8 @@ export class ComponentService {
   }
 
   onDataReceived = (close: boolean) => this.dataObsevable.next(close);
-
+  
+  getdataObservable(): BehaviorSubject<boolean> {
+    return this.dataObsevable;
+  }
 }

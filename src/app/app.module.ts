@@ -10,11 +10,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ConfirmComponent } from './dialogs/confirm/confirm.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { GroceryComponent } from './grocery/grocery.component';
+import { AppleComponent } from './components/fruit/apple/apple.component';
+import { LimeComponent } from './components/fruit/lime/lime.component';
+import { GroceryStoreService } from './grocery-store.service';
+import { FormsModule } from '@angular/forms';
+import { AsyncObservablePipeComponent } from './async-observable-pipe/async-observable-pipe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    GroceryComponent,
+    AppleComponent,
+    LimeComponent,
+    AsyncObservablePipeComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +35,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [GroceryStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

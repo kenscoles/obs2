@@ -1,0 +1,12 @@
+<p><b>Grocery Component</b></p>
+<div class="form-field">
+    <label for="changeApples">Number of apples:</label>
+    <input id="changeApples" type="text" placeholder="0" [(ngModel)]="numberOfApples">
+  </div>
+<button (click)="changeApples()">Change Apples</button>
+  <div class="form-field">
+    <label for="changeLimes">Number of limes:</label>
+    <input id="changeLimes" type="text" placeholder="0" [(ngModel)]="numberOfLimes">
+  </div>
+  <button (click)="changeLimes()">Change Limes</button>
+  <p>Last event: {{ lastEvent }}</p>

@@ -3,18 +3,19 @@
 </mat-toolbar>
 <br>
 <mat-card class="example-card">
-    <mat-card-title>Card Title</mat-card-title>
-    <mat-card-subtitle>Card subtitle - {{longText}}</mat-card-subtitle>
-    <mat-card-content>
-      <h4>Create Reusable Confirmation Dialogs with Angular Material - by Zoaib Khan</h4>
-      <a href="https://zoaibkhan.com/blog/create-reusable-confirmation-dialogs-with-angular-material/"
-       target="_blank">Click here
-      </a>
-      <p>{{reply}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button class='button' mat-raised-button (click)="yesNoDialog()">YES/NO</button>
-      <button class= 'button' mat-raised-button (click)="confirmCancelDialog()">CONFIRM/CANCEL</button>
-    </mat-card-actions>
-  </mat-card>
-  <button class='button' mat-raised-button (click)="test()">test</button>
+  <mat-card-title>Card Title</mat-card-title>
+  <mat-card-subtitle>Card subtitle - {{longText}}</mat-card-subtitle>
+  <mat-card-content>
+    <h4>Create Reusable Confirmation Dialogs with Angular Material - by Zoaib Khan</h4>
+    <p>{{reply}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class='button' mat-raised-button (click)="yesNoDialog()">YES/NO</button>
+    <button class='button' mat-raised-button (click)="confirmCancelDialog()">CONFIRM/CANCEL</button>
+    <button class='button' mat-raised-button (click)="test()">test</button>
+  </mat-card-actions>
+</mat-card>
+<app-grocery></app-grocery>
+<app-apple></app-apple>
+<app-lime></app-lime>
+<async-observable-pipe></async-observable-pipe>

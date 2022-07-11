@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { DialogService } from './services/dialog.service';
 
 @Component({
@@ -8,10 +7,12 @@ import { DialogService } from './services/dialog.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private dialog: DialogService) {}
-  longText ="this is the long text";
-  reply?:string;
-  ok : boolean = false;
+  constructor(private dialog: DialogService) { }
+
+  longText = "this is the long text";
+  reply?: string;
+  ok: boolean = false;
+
   yesNoDialog() {
     this.dialog
       .confirmDialog({
@@ -44,7 +45,7 @@ export class AppComponent {
         if (confirmed) {
           console.log('The user confirmed the action');
           this.reply = 'Confirmed';
-          
+
         }
         else {
           console.log('The user did not confirm the action');
@@ -54,7 +55,7 @@ export class AppComponent {
       });
   }
   ////
-   myConfirmCancelDialog(): boolean {
+  myConfirmCancelDialog(): boolean {
     this.dialog
       .confirmDialog({
         title: 'Confirm Action',
@@ -74,22 +75,24 @@ export class AppComponent {
           this.ok = false;
         }
       });
-      return this.ok; 
-    }
-    test(){
+    return this.ok;
+  }
+  test() {
 
-      this.dialog.Yes_No_Prompt({
-        title: 'Please Confirm Action',
-        message: 'Do you want to save the file?',
-        confirmCaption: 'Yes',
-        cancelCaption: 'No',
-      }).subscribe(result => {
-        if(result) {
-          console.log('true');// something is true (pressed yes)
-        } else {
-          console.log('false');// something if false (pressed no)
-        } 
-     }); 
+    this.dialog.Yes_No_Prompt({
+      title: 'Please Confirm Action',
+      message: 'Do you want to take this action?',
+      confirmCaption: 'Oui',
+      cancelCaption: 'Non',
+    }).subscribe(result => {
+      if (result) {
+        console.log('true');// something is true (pressed yes)
+        this.reply = 'affirmative';
+      } else {
+        console.log('false');// something if false (pressed no)
+        this.reply = 'negative';
+      }
+    });
   }
   ////
 }
