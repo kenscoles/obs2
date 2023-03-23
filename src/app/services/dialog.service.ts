@@ -15,6 +15,8 @@ export class DialogService {
       .open(ConfirmComponent, {
         data,
         width: '400px',
+        enterAnimationDuration: '3000ms',
+        exitAnimationDuration: '1500ms',
         disableClose: true,
       })
       .afterClosed();
@@ -24,6 +26,8 @@ export class DialogService {
     const yesNoDialog = this.dialog.open(ConfirmComponent, {
       data,
       width: '400px',
+      enterAnimationDuration: '3000ms',
+      exitAnimationDuration: '1500ms',
       disableClose: true,
     });
 

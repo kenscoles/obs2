@@ -75,6 +75,7 @@ export class AppComponent {
           this.ok = false;
         }
       });
+     console.log(`result${this.ok}`) 
     return this.ok;
   }
   test() {
