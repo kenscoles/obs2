@@ -8,8 +8,8 @@ describe('AsyncObservablePipeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AsyncObservablePipeComponent ]
-    })
+    imports: [AsyncObservablePipeComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(AsyncObservablePipeComponent);

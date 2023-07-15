@@ -8,8 +8,8 @@ describe('LimeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LimeComponent ]
-    })
+    imports: [LimeComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(LimeComponent);

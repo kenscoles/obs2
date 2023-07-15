@@ -8,8 +8,8 @@ describe('AppleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppleComponent ]
-    })
+    imports: [AppleComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(AppleComponent);

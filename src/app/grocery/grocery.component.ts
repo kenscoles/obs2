@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { GroceryStoreService } from '../grocery-store.service';
 import { BehaviorSubject } from 'rxjs';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-grocery',
-  templateUrl: './grocery.component.html',
-  styleUrls: ['./grocery.component.css']
+    selector: 'app-grocery',
+    templateUrl: './grocery.component.html',
+    styleUrls: ['./grocery.component.css'],
+    standalone: true,
+    imports: [FormsModule]
 })
 export class GroceryComponent implements OnInit {
 
