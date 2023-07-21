@@ -1,14 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+
 import { DialogService } from './services/dialog.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatDialogModule} from '@angular/material/dialog';
+
+import { GroceryComponent } from './grocery/grocery.component';
+import { AppleComponent } from './components/fruit/apple/apple.component';
+import { LimeComponent } from './components/fruit/lime/lime.component';
+
+import { AsyncObservablePipeComponent } from './async-observable-pipe/async-observable-pipe.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [ MatCardModule, MatButtonModule, MatToolbarModule, MatDialogModule,
+  GroceryComponent, AppleComponent, LimeComponent,
+AsyncObservablePipeComponent] 
 })
 export class AppComponent {
   constructor(private dialog: DialogService) { }
-
+ 
   longText = "this is the long text";
   reply?: string;
   ok: boolean = false;

@@ -1,12 +1,20 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { AppComponent } from './app/app.component';
 
-import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+      importProvidersFrom(BrowserModule,BrowserAnimationsModule, FormsModule, MatDialogModule ),
+      
+  ]
+})
+.catch(err => console.error(err));

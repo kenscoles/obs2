@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GroceryStoreService } from '../grocery-store.service';
 import { BehaviorSubject } from 'rxjs';
 import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { FormsModule } from '@angular/forms';
     templateUrl: './grocery.component.html',
     styleUrls: ['./grocery.component.css'],
     standalone: true,
-    imports: [FormsModule]
+    imports: [FormsModule, MatButtonModule]
 })
 export class GroceryComponent implements OnInit {
 
