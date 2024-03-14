@@ -10,7 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     templateUrl: './apple.component.html',
     styleUrls: ['./apple.component.css'],
     standalone: true,
-    imports: [AsyncPipe, MatToolbarModule]
+    imports: [ MatToolbarModule, AsyncPipe]
 })
 export class AppleComponent implements OnInit {
   applesBasket$: BehaviorSubject<number>;
