@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
+import { APP_ROUTES } from './app/app.routes';
 
 if (environment.production) {
   enableProdMode();
@@ -14,7 +16,7 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
       importProvidersFrom(BrowserModule,BrowserAnimationsModule, FormsModule, MatDialogModule ),
-      
+      provideRouter(APP_ROUTES, withComponentInputBinding()),
   ]
 })
 .catch(err => console.error(err));

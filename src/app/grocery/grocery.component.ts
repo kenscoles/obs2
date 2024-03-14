@@ -3,14 +3,15 @@ import { GroceryStoreService } from '../grocery-store.service';
 import { BehaviorSubject } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-
+import { AppleComponent } from '../components/fruit/apple/apple.component';
+import { LimeComponent } from '../components/fruit/lime/lime.component';
 
 @Component({
     selector: 'app-grocery',
     templateUrl: './grocery.component.html',
     styleUrls: ['./grocery.component.css'],
     standalone: true,
-    imports: [FormsModule, MatButtonModule]
+    imports: [FormsModule, MatButtonModule, AppleComponent, LimeComponent]
 })
 export class GroceryComponent implements OnInit {
 
