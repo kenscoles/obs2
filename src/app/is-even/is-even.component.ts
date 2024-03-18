@@ -8,6 +8,7 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
   @if(isBy3()) {<div>Number divisible by 3 </div>}
   @if(isBy2()) {<div>Number divisible by 2 </div>}
   `,
+   styleUrl: './is-even.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IsEvenComponent {

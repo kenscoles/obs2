@@ -3,12 +3,10 @@
     <label for="changeApples">Number of apples:</label>
     <input id="changeApples" type="text" placeholder="0" [(ngModel)]="numberOfApples">
   </div>
-<button mat-raised-button color="accent" (click)="changeApples()">Change Apples</button>
   <div class="form-field">
     <label for="changeLimes">Number of limes:</label>
     <input id="changeLimes" type="text" placeholder="0" [(ngModel)]="numberOfLimes">
   </div>
-  <button mat-raised-button color="accent" (click)="changeLimes()">Change Limes</button>
   <p>Last event: {{ lastEvent }}</p>
-  <app-apple />
-  <app-lime />
+  <app-apple [myApples]="numberOfApples" (reportApples)="AddApples($event)"></app-apple>
+  <app-lime [myLimes]="numberOfLimes" (reportLimes) = "AddLimes($event)"></app-lime>

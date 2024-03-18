@@ -35,11 +35,11 @@ export class GroceryComponent implements OnInit {
   limesBasket$: BehaviorSubject<number>;
   lastEvent:string = '';
 
-  changeApples() {
-    this.applesBasket$.next(this.numberOfApples);
+  
+  AddApples($event: any){ // $event contains number of apples
+    this.applesBasket$.next($event);
   }
-
-  changeLimes() {
-    this.limesBasket$.next(this.numberOfLimes);
+  AddLimes($event: any){ // $event contains number of limes
+    this.limesBasket$.next($event);
   }
 }
