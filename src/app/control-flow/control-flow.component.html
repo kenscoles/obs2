@@ -10,7 +10,7 @@
   <span>Not checked</span>
 }
 </div>
-
+<hr>
 <h3>&#64;switch and &#64;case</h3>
 <div>
   <div>
@@ -43,14 +43,14 @@
   }
 }
 </div>
-
+<hr>
 <h3>&#64;for</h3>
 <ul>
 @for (item of collection; track item.id; let index = $index, first = $first; let last = $last, even = $even, odd = $odd; let count = $count) {
 <li><strong>{{item.name}}</strong> index={{index}} first={{first}} last={{last}} even={{even}} odd={{odd}} count={{count}}</li>
 }
 </ul>
-
+<hr>
 <h3>&#64;empty</h3>
 <ul>
 @for (item of emptyCollection; track item.id;) {
