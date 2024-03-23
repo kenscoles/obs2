@@ -1,12 +1,12 @@
 <p><b>Grocery Component</b></p>
 <div class="form-field">
     <label for="changeApples">Number of apples:</label>
-    <input id="changeApples" type="text" placeholder="0" [(ngModel)]="numberOfApples">
+    <input id="changeApples" type="text" size = "4" placeholder="0" [(ngModel)]="sigApples">
   </div>
   <div class="form-field">
     <label for="changeLimes">Number of limes:</label>
-    <input id="changeLimes" type="text" placeholder="0" [(ngModel)]="numberOfLimes">
+    <input id="changeLimes" type="text" size = "4" placeholder="" [(ngModel)]="sigLimes">
   </div>
-  <p>Last event: {{ lastEvent }}</p>
-  <app-apple [myApples]="numberOfApples" (reportApples)="AddApples($event)"></app-apple>
-  <app-lime [myLimes]="numberOfLimes" (reportLimes) = "AddLimes($event)"></app-lime>
+ <h2> Fruit : {{numberOfFruit()}}</h2> 
+  <app-apple [myApples]="sigApples()" (reportApples)="AddApples($event)"></app-apple>
+  <app-lime [myLimes]="sigLimes()" (reportLimes)="AddLimes($event)"></app-lime>

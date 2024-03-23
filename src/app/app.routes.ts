@@ -20,6 +20,11 @@ export const APP_ROUTES: Routes = [
                 loadComponent: () => import('./dialog/dialog.component').then(c => c.DialogComponent)
 
             },
+            {
+                path: 'control', title: 'control', // added KSC
+                loadComponent: () => import('./control-flow/control-flow.component').then(c => c.ControlFlowComponent)
+
+            },
         ]
     }
 
