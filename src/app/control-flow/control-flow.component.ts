@@ -15,7 +15,7 @@ type CollectionType = ReadonlyArray<ItemType>;
   templateUrl: './control-flow.component.html',
   styles : `:host {
     display: block;
-    background-color:rgb(92, 121, 218);
+    background-color: rgb(201, 206, 158);
    }`
 })
 export class ControlFlowComponent {
@@ -24,7 +24,8 @@ export class ControlFlowComponent {
   collection: CollectionType = [
     { id: 1, name: 'Item 1' },
     { id: 2, name: 'Item 2' },
-    { id: 3, name: 'Item 3' }
+    { id: 3, name: 'Item 3' },
+    { id: 4, name: 'Item 4' }
   ];
   emptyCollection: CollectionType = [];
 
