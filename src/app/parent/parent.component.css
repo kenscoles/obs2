@@ -11,3 +11,7 @@
     background-color: blue;
     margin: 5px;
   }
+  :host {
+    display: block;
+    background-color: rgb(236, 227, 128);
+   }
