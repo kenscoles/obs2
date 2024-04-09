@@ -2,8 +2,14 @@ import { Component, effect, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-apple',
-  templateUrl: './apple.component.html',
-  styleUrls: ['./apple.component.css'],
+  template: `<p><b>Apple Component</b></p>
+  <div class="container">
+      <h2>Number of apples: {{myApples()}}</h2>
+    </div>`,
+  styles : `:host {
+    display: block;
+    background-color: rgb(235, 93, 83);
+   }`,
   standalone: true,
   imports: []
 })

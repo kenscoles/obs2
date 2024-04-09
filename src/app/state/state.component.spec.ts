@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppleComponent } from './apple.component';
+import { StateComponent } from './state.component';
 
-describe('AppleComponent', () => {
-  let component: AppleComponent;
-  let fixture: ComponentFixture<AppleComponent>;
+describe('StateComponent', () => {
+  let component: StateComponent;
+  let fixture: ComponentFixture<StateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [AppleComponent]
-})
+      imports: [StateComponent]
+    })
     .compileComponents();
-
-    fixture = TestBed.createComponent(AppleComponent);
+    
+    fixture = TestBed.createComponent(StateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

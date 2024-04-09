@@ -9,5 +9,6 @@
     <input id="changeLimes" type="text" size = "4" placeholder="" [(ngModel)]="sigLimes">
   </div>
  <h2> Fruit : {{numberOfFruit()}}</h2> 
+ @if(equality()) {The same number}  <!--added to test-->
   <app-apple [myApples]="sigApples()" (reportApples)="AddApples($event)"></app-apple>
   <app-lime [myLimes]="sigLimes()" (reportLimes)="AddLimes($event)"></app-lime>
