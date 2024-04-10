@@ -35,6 +35,11 @@ export const APP_ROUTES: Routes = [
                 loadComponent: () => import('./control-flow/control-flow.component').then(c => c.ControlFlowComponent)
 
             },
+            {
+                path: 'kb-test', title: 'kb-test',
+                loadComponent: () => import('./kb-test/kb-test.component').then(c => c.KbTestComponent)
+
+            },
         ]
     }
 

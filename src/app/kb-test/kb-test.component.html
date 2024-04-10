@@ -1,0 +1,10 @@
+<h1>Testing the keyboard component</h1>
+<div class="container">
+    <div class="comp1">
+        <h2>Digit: {{digit()}}</h2>
+        <h2>Text: {{text()}}</h2>
+        
+    </div>
+    <app-keyboard (outputDigit)="showDigit($event)"></app-keyboard>
+</div>
+<h1>End of test</h1>

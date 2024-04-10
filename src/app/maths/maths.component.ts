@@ -2,12 +2,13 @@ import { Component, OnInit, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon'; 
+import {NgStyle} from '@angular/common';
 
 @Component({
   selector: 'app-maths',
   standalone: true,
-  imports: [FormsModule, MatButtonModule, MatGridListModule, MatIconModule],
+  imports: [NgStyle, FormsModule, MatButtonModule, MatGridListModule, MatIconModule],
   templateUrl: './maths.component.html',
   styleUrl: './maths.component.css'
 })
