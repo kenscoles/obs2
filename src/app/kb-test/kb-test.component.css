@@ -16,7 +16,15 @@
 
   .comp1, .comp2, .comp3 {
     border: 2px solid blue;
-    width:60%;
+    width:30%;
+    text-align: left;
+    text-indent: 10px;
+    height: 300px;
+    flex-grow: 1;
+  }
+  is-even {
+    border: 2px solid blue;
+    width:30%;
     text-align: left;
     text-indent: 10px;
     height: 300px;
