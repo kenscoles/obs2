@@ -19,7 +19,7 @@
     width:30%;
     text-align: left;
     text-indent: 10px;
-    height: 300px;
+    height: 400px;
     flex-grow: 1;
   }
   is-even {
@@ -27,6 +27,6 @@
     width:30%;
     text-align: left;
     text-indent: 10px;
-    height: 300px;
+    height: 400px;
     flex-grow: 1;
   }
