@@ -1,0 +1,26 @@
+<h1>
+	Debounce Directive Example
+</h1>
+
+<div>Button will debounce clicks and show alert after 2000ms</div>
+<button
+  DebounceClick
+  [debounceTime]="2000"
+  (onEvent)="handleDebouncedClick($event)"
+  type="button"
+>
+  Click
+</button>
+
+<br /><br />
+
+<div>Input will debounce keyup and update modal value after 1000ms</div>
+<input
+  DebounceKeyUp
+  [debounceTime]="1000"
+  (onEvent)="handleDebouncedKeyUp($event)"
+  type="text"
+  placeholder="Search"
+/>
+
+<pre>{{inputValue | json}}</pre>

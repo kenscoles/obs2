@@ -20,11 +20,11 @@ export class GroceryComponent {
   numberOfFruit = computed (() => Number(Number(this.sigApples())) + (Number(this.sigLimes()))) 
   equality = computed (() => Number(Number(this.sigApples())) == (Number(this.sigLimes()))) /////////////TEST
 
-  AddApples($event: any): void{ // $event contains number of apples
+  AddApples($event: number): void{ // $event contains number of apples
     console.log(`apples:${$event}`)
   }
 
-  AddLimes($event: any): void{ // $event contains number of limes
+  AddLimes($event: number): void{ // $event contains number of limes
     console.log(`limes:${$event}`)
   }
 }

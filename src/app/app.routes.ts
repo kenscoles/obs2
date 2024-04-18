@@ -11,8 +11,8 @@ export const APP_ROUTES: Routes = [
 
             },
             {
-                path: 'maths', title: 'maths', // added KSC
-                loadComponent: () => import('./maths/maths.component').then(c => c.MathsComponent)
+                path: 'maths2', title: 'maths', // added KSC
+                loadComponent: () => import('./maths2/maths2.component').then(c => c.Maths2Component)
 
             },
             {
@@ -38,6 +38,11 @@ export const APP_ROUTES: Routes = [
             {
                 path: 'kb-test', title: 'kb-test',
                 loadComponent: () => import('./kb-test/kb-test.component').then(c => c.KbTestComponent)
+
+            },
+            {
+                path: 'debounce', title: 'debounce',
+                loadComponent: () => import('./debounce/debounce.component').then(c => c.DebounceComponent)
 
             },
         ]

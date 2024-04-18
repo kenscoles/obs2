@@ -3,3 +3,15 @@
 <span>Count: {{count}}</span>
 <counter [value]=count></counter>
 <is-even [counter]=count></is-even>
+<app-child (status)="syncProducts()"></app-child>
+<div appLightbox highlightColor="black">
+    <h1 style="display: table-cell;">Welcome to Angular v.17</h1>
+</div>
+<div appLightbox myHighlightColor="red">
+    <h1 style="display: table-cell;">Ken</h1>
+</div>
+<!--
+<app-my-timer (timer)="displayTimer($event)"></app-my-timer>
+-->
+Timer: {{myTimer()}}
+<app-my-timer (take4)="displayTimer($event)"></app-my-timer>

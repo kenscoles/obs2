@@ -1,0 +1,49 @@
+<h2> Maths version 2</h2>
+<div class="example-container">
+    <br>
+    <mat-grid-list cols="7" rowHeight="1:1">
+        <mat-grid-tile> {{a}} </mat-grid-tile>
+        <mat-grid-tile> {{symbol}} </mat-grid-tile>
+        <mat-grid-tile> {{b}} </mat-grid-tile>
+        <mat-grid-tile> = </mat-grid-tile>
+        <mat-grid-tile> {{answer()}} </mat-grid-tile>
+        <div style="font-weight: bold" [style.color]="color()">
+            <mat-grid-tile>
+                @if(isCorrect()){&checkmark;}
+                @else if (isWrong()) {&cross;}
+                @else {?}
+            </mat-grid-tile>
+            @if(isWrong() ) {
+            <mat-grid-tile>
+               {{theAnswer()}}
+            </mat-grid-tile>}
+        </div>
+    </mat-grid-list>
+</div>
+<br>
+<div class="myButton">
+    @if(isCorrect() || isWrong()) {
+    <button mat-raised-button color="primary" (click)="getData()">Next question</button>
+    }
+    @else {
+    <button disabled mat-raised-button>Next question</button>
+    }
+</div>
+<br>
+<span [ngStyle]="{'visibility':isCorrect() || isWrong() ? 'hidden' : 'visible'}">
+<div class="keyboard">
+    <mat-grid-list cols="3" rowHeight="1:1">
+        @for (item of myKeys; track item) {
+        <mat-grid-tile><button mat-raised-button color="accent" (click)="addDigit(item)"
+             [disabled]="isCorrect() || isWrong()">{{item}}
+            </button></mat-grid-tile>
+        }
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <!--
+        <mat-grid-tile><button mat-raised-button color="accent" (click)="clear()">del</button></mat-grid-tile>
+    -->
+    </mat-grid-list>
+</div>
+</span>
+{{myCorrect()}} / {{myTries()}} Correct: {{isCorrect()}} Wrong: {{isWrong()}}

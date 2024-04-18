@@ -23,7 +23,7 @@
     flex-grow: 1;
   }
   is-even {
-    border: 2px solid blue;
+    border: 6px solid blue;
     width:30%;
     text-align: left;
     text-indent: 10px;
