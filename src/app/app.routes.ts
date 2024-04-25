@@ -45,6 +45,11 @@ export const APP_ROUTES: Routes = [
                 loadComponent: () => import('./debounce/debounce.component').then(c => c.DebounceComponent)
 
             },
+            {
+                path: 'local', title: 'local',
+                loadComponent: () => import('./local/local.component').then(c => c.LocalComponent)
+
+            },
         ]
     }
 
