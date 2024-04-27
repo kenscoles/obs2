@@ -11,11 +11,6 @@ export const APP_ROUTES: Routes = [
 
             },
             {
-                path: 'maths2', title: 'maths', // added KSC
-                loadComponent: () => import('./maths2/maths2.component').then(c => c.Maths2Component)
-
-            },
-            {
                 path: 'state', title: 'state', // added KSC
                 loadComponent: () => import('./state/state.component').then(c => c.StateComponent)
 
@@ -48,6 +43,11 @@ export const APP_ROUTES: Routes = [
             {
                 path: 'local', title: 'local',
                 loadComponent: () => import('./local/local.component').then(c => c.LocalComponent)
+
+            },
+            {
+                path: 'address', title: 'address',
+                loadComponent: () => import('./address/address.component').then(c => c.AddressComponent)
 
             },
         ]

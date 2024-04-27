@@ -1,6 +1,6 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { KeyboardComponent } from '../keyboard/keyboard.component';
-import { IsEvenComponent } from '../is-even/is-even.component';
+import { KeyboardComponent } from '../shared/components/keyboard/keyboard.component';
+import { IsEvenComponent } from '../shared/components/is-even/is-even.component';
 @Component({
   selector: 'app-kb-test',
   standalone: true,

@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { CounterComponent } from '../counter/counter.component';
-import { IsEvenComponent } from '../is-even/is-even.component';
+import { CounterComponent } from '../shared/components/counter/counter.component';
+import { IsEvenComponent } from '../shared/components/is-even/is-even.component';
 import { MatButtonModule } from '@angular/material/button';
 import { ChildComponent } from '../child/child.component';
 import { LightboxDirective } from '../lightbox.directive';
-import { MyTimerComponent } from '../my-timer/my-timer.component';
+import { MyTimerComponent } from '../shared/components/my-timer/my-timer.component';
 
 
 @Component({

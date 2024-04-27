@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet,RouterModule } from '@angular/router'
-import { AsyncObservablePipeComponent } from './async-observable-pipe/async-observable-pipe.component';
+import { AsyncObservablePipeComponent } from './shared/pipes/async-observable-pipe/async-observable-pipe.component';
 
 @Component({
   selector: 'app-root',

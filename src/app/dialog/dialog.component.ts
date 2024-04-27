@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { DialogService } from '../services/dialog.service';
+import { DialogService } from '../shared/services/dialog.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
