@@ -1,3 +1,39 @@
-<p>local works!</p>
-<button (click)="readStorage()" >Get id</button>
-<button (click)="writeStorage()" >Save name</button>
+<p>Stored data</p>
+
+<br>
+<form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="half-width">
+                <input matInput placeholder="First name" formControlName="firstName">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="half-width">
+                <input matInput placeholder="Last name" formControlName="lastName">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="half-width">
+                <input matInput placeholder="Colour" formControlName="colour">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Last used" formControlName="lastUsed">
+            </mat-form-field>
+        </div>
+    </div>
+
+
+    <button mat-raised-button color="primary" type="submit">save</button>
+</form>
