@@ -4,10 +4,10 @@ import { AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({
     selector: 'async-observable-pipe',
-    template: '<div> Time: {{ now | async | date:" dd MMM yy - HH:mm" }}</div>',
+    template: '<div> (Time:  {{ now | async | date:" dd MMM yy - HH:mm" }})</div>',
     styles: `:host {
       display: block;
-      color: white;
+      color:white; margin-left: 10px; font-size: small;
      } `,
     standalone: true,
     imports: [AsyncPipe, DatePipe]

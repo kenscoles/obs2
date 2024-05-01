@@ -1,14 +1,13 @@
-<async-observable-pipe />
-<div class="container">
-  <a [routerLink]="['parent']" routerLinkActive="active" class="btn">Parent</a>
-  <a [routerLink]="['grocery']" routerLinkActive="active" class="btn">Grocery Example</a>
-  <a [routerLink]="['state']" routerLinkActive="active" class="btn">State</a>
-  <a [routerLink]="['dialog']" routerLinkActive="active" class="btn">Dialog Example</a>
-  <a [routerLink]="['control']" routerLinkActive="active" class="btn">Control Flow</a>
-  <a [routerLink]="['kb-test']" routerLinkActive="active" class="btn">KB Test</a>
-  <a [routerLink]="['debounce']" routerLinkActive="active" class="btn">Debounce Test</a>
-  <a [routerLink]="['local']" routerLinkActive="active" class="btn">Local</a>
-  <a [routerLink]="['address']" routerLinkActive="active" class="btn">Address</a>
-
-</div>
-<router-outlet />
+<!---->
+@if(!myTest()){
+<mat-toolbar color="primary" class="fixed-header">
+  <button mat-button [routerLink]="'/menu'">Menu</button>
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+  <async-observable-pipe />
+</mat-toolbar>
+}
+<router-outlet></router-outlet>
+<!--
+style="min-height: 30px !important; height: 30px !important;"
+-->

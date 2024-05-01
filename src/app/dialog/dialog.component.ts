@@ -15,7 +15,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 export class DialogComponent {
 dialog = inject(DialogService)
 longText = "this is the long text";
-  reply?: string;
+  reply: string = "";
   ok: boolean = false;
 
   yesNoDialog() {

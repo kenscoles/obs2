@@ -1,39 +1,42 @@
-<p>Stored data</p>
-
-<br>
-<form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit()">
-    <div class="row">
-        <div class="col">
-            <mat-form-field class="half-width">
-                <input matInput placeholder="First name" formControlName="firstName">
-            </mat-form-field>
+<div class="container">
+    <p>Stored data</p>
+    <form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <label>First name:</label>
+                    <input matInput placeholder="First name" formControlName="firstName">
+                </mat-form-field>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col">
-            <mat-form-field class="half-width">
-                <input matInput placeholder="Last name" formControlName="lastName">
-            </mat-form-field>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width" floatLabel="always">
+                    <label>Last name:</label>
+                    <input matInput placeholder="Last name" formControlName="lastName">
+                </mat-form-field>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col">
-            <mat-form-field class="half-width">
-                <input matInput placeholder="Colour" formControlName="colour">
-            </mat-form-field>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <label>Fav colour:</label>
+                    <input matInput placeholder="Colour" formControlName="colour">
+                </mat-form-field>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col">
-            <mat-form-field class="full-width">
-                <input matInput placeholder="Last used" formControlName="lastUsed">
-            </mat-form-field>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Last used" formControlName="lastUsed">
+                </mat-form-field>
+            </div>
         </div>
-    </div>
-
-
-    <button mat-raised-button color="primary" type="submit">save</button>
-</form>
+        <button mat-raised-button class="centered" color="primary" type="submit">save</button>
+    </form>
+</div>
+<button (click)="test()">test</button>
+<button (click)="test2()">test 2</button>

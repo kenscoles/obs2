@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-local',
@@ -13,6 +14,7 @@ import { MatSelectModule } from '@angular/material/select';
   styleUrl: './local.component.css'
 })
 export class LocalComponent {
+  pipe = new DatePipe('en-UK'); // Use your own locale
 
   localStore = inject(LocalService)
   fb = inject(FormBuilder)
@@ -24,26 +26,38 @@ export class LocalComponent {
     lastUsed: ""
   });
 
-//  myData: any = [];
+  //  myData: any = [];
   myStored: any = [];
-  used = ""
+  myLog:string[] = ["one", "two"]
 
   ngOnInit(): void { // read in stored values
-    this.myStored = JSON.parse(this.localStore.getData('myData')!)
-    this.used = JSON.parse(this.localStore.getData('lastUsed')!)
+    var myStored = JSON.parse(this.localStore.getData('myData')!)
+    this.myLog = JSON.parse(this.localStore.getData('log')!)
+    var lastItem:string = this.myLog[this.myLog.length-1]
+    
     this.myForm.patchValue({
-      firstName: this.myStored.firstName,
-      lastName: this.myStored.lastName,
-      colour: this.myStored.colour,
-      lastUsed: this.used
+      firstName: myStored.firstName,
+      lastName: myStored.lastName,
+      colour: myStored.colour,
+      lastUsed: lastItem
     })
-var myTime = Date()
-console.log("Date:", myTime) 
+
   }
 
   onSubmit() {
+    const myTime = this.pipe.transform(Date.now(), 'medium')!;
+   
+    this.myLog.push(myTime)
     console.log(this.myForm.value)
     this.localStore.saveData('myData', JSON.stringify(this.myForm.value))
-    this.localStore.saveData('lastUsed', JSON.stringify(Date()))
+    this.localStore.saveData('log', JSON.stringify(this.myLog))
+  }
+  
+  test() {
+  this.localStore.removeData('lastUsed')
+  }
+
+  test2(){
+    
   }
 }

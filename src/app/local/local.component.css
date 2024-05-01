@@ -2,11 +2,23 @@
     display: block;
     background-color: rgb(173, 175, 153);
    }
+.container {  
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:gray;
+}
+
+
    .full-width {
-    width: 100%;
+    width: 80%;
+    display: block;
+    margin:0 auto;
   }
   .half-width {
     width: 50%;
+    display: block;
+    margin:0 auto;
   }
     
   .row {
@@ -22,3 +34,13 @@
   .col:last-child {
     margin-right: 0;
   }
+  label {
+    display: flex;
+    align-items: center;
+    font-size: small;
+  }
+  .centered  {
+    display: block;
+    margin:0 auto;
+    
+}

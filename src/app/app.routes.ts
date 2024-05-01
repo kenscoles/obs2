@@ -6,6 +6,11 @@ export const APP_ROUTES: Routes = [
         path: '',
         children: [
             {
+                path: 'menu', title: 'menu', // added KSC
+                loadComponent: () => import('./menu/menu.component').then(c => c.MenuComponent)
+
+            },
+            {
                 path: 'parent', title: 'parent', // added KSC
                 loadComponent: () => import('./parent/parent.component').then(c => c.ParentComponent)
 

@@ -7,11 +7,13 @@
     <mat-card-subtitle>Card subtitle - {{longText}}</mat-card-subtitle>
     <mat-card-content>
       <h4>Create Reusable Confirmation Dialogs with Angular Material - by Zoaib Khan</h4>
-      <p>{{reply}}</p>
+      @if (reply) {<p>{{reply}}</p>}
+      @else {<p>response will go here</p>}
+      
     </mat-card-content>
     <mat-card-actions>
-      <button class='button' mat-raised-button (click)="yesNoDialog()">YES/NO</button>
-      <button class='button' mat-raised-button (click)="confirmCancelDialog()">CONFIRM/CANCEL</button>
-      <button class='button' mat-raised-button (click)="test()">test</button>
+      <button class='button' color="primary" mat-raised-button (click)="yesNoDialog()">YES/NO</button>
+      <button class='button' mat-raised-button color="primary" (click)="confirmCancelDialog()">CONFIRM/CANCEL</button>
+      <button class='button' mat-raised-button color="primary" (click)="test()">test</button>
     </mat-card-actions>
   </mat-card>
