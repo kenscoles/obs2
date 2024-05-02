@@ -28,7 +28,7 @@ export class LocalComponent {
 
   //  myData: any = [];
   myStored: any = [];
-  myLog:string[] = ["one", "two"]
+  myLog:string[] = []
 
   ngOnInit(): void { // read in stored values
     var myStored = JSON.parse(this.localStore.getData('myData')!)

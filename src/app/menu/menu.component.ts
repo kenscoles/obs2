@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, inject } from '@angular/core';
+import { Component, inject, DestroyRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ComponentService } from '../shared/services/component.service';
 
@@ -9,16 +9,16 @@ import { ComponentService } from '../shared/services/component.service';
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
-export class MenuComponent implements OnInit, OnDestroy {
-  
-  componentService  = inject(ComponentService)
-  ngOnInit(): void {
-    var test = this.componentService.setSignal()
-    console.log("Test", test)
-  }
+export class MenuComponent {
 
-  ngOnDestroy(): void {
-    this.componentService.unsetSignal()
+  componentService = inject(ComponentService)
+
+  constructor() {
+    this.componentService.isMenu.set(true) // this is the menu
+    const destroyRef = inject(DestroyRef);
+    // register a destroy callback
+    destroyRef.onDestroy(() =>
+    this.componentService.isMenu.set(false));
   }
 
 }

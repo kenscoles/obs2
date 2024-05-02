@@ -24,6 +24,6 @@ export class AppComponent {
     this.router.navigate(['/menu'])
   }
   
-myTest = this.componentService.isMenu
+hideToolbar = this.componentService.isMenu
 
 }

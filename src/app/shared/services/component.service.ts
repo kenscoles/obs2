@@ -17,16 +17,5 @@ export class ComponentService {
   getdataObservable(): BehaviorSubject<boolean> {
     return this.dataObservable;
   }
-  setSignal() {
-    this.isMenu.set(true)
-    return "true"
-  }
-
-  unsetSignal() {
-    this.isMenu.set(false)
-  }
-
-getSignal(){
-  return this.isMenu()
-}
+ 
 }
