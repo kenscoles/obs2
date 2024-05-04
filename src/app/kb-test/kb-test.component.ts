@@ -12,13 +12,13 @@ export class KbTestComponent implements OnInit{
   
   ngOnInit(): void {}
 
-  digit = signal("")
-  text = signal("")
-  result = signal(0)
+  digit = signal("") // single value as string
+  text = signal("") // accumulated string
+  result = signal(0) // accumulated string as number
   
 
   showDigit($event: string): void {
-    console.log("rec in test: ", $event)
+    console.log("event received: ", $event)
 
     if ($event == "del") {
       let str = this.text();
