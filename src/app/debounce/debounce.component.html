@@ -1,9 +1,9 @@
 <h1>
 	Debounce Directive Example
 </h1>
-
+<h3>1 BUTTON</h3>
 <div>Button will debounce clicks and show alert after 2000ms</div>
-<button
+<button mat-raised-button color="primary"
   DebounceClick
   [debounceTime]="2000"
   (onEvent)="handleDebouncedClick($event)"
@@ -13,14 +13,16 @@
 </button>
 
 <br /><br />
-
+<h3>2 INPUT</h3>
 <div>Input will debounce keyup and update modal value after 1000ms</div>
-<input
+<mat-form-field>
+<input matInput
   DebounceKeyUp
   [debounceTime]="1000"
   (onEvent)="handleDebouncedKeyUp($event)"
   type="text"
   placeholder="Search"
 />
+</mat-form-field>
 {{inputValue}}
 <pre>{{inputValue | json}}</pre>
