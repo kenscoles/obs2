@@ -1,0 +1,36 @@
+<h4>{{title}}</h4>
+
+<div>
+    <button (click)="addPerson()">Add new record</button>
+</div>
+<div>
+    {{status}}
+</div>
+
+<table class='table'>
+    <thead>
+        <tr>
+            <th>idx</th>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--
+    <tr *ngFor="let person of people;">
+        -->
+        @for (person of people; track $index) {
+        <tr>
+            <td>{{$index}}</td>
+            <td>{{person.id}}</td>
+            <td><input [(ngModel)]="person.fname" /></td>
+            <td><input [(ngModel)]="person.lname" /></td>
+            <td><input [(ngModel)]="person.age" /></td>
+            <td><button (click)="updatePerson(person)">Update</button></td>
+            <td><button (click)="deletePerson(person.id)">Del</button></td>
+        </tr>
+        }
+    </tbody>
+</table>

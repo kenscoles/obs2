@@ -51,6 +51,11 @@ export const APP_ROUTES: Routes = [
 
             },
             {
+                path: 'jserver', title: 'jserver',
+                loadComponent: () => import('./jserver/jserver.component').then(c => c.JserverComponent)
+
+            },
+            {
                 path: 'address', title: 'address',
                 loadComponent: () => import('./address/address.component').then(c => c.AddressComponent)
 
