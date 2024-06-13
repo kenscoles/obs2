@@ -1,18 +1,16 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../shared/services/api.service';
 import { Person } from '../shared/models/person';
 import { catchError, finalize, throwError } from 'rxjs';
 
-@Component({
-  selector: 'app-jserver',
-  standalone: true,
-  imports: [CommonModule, HttpClientModule, FormsModule],
-  templateUrl: './jserver.component.html',
-  styleUrl: './jserver.component.css'
-})
+@Component({ selector: 'app-jserver',
+    standalone: true,
+    templateUrl: './jserver.component.html',
+    styleUrl: './jserver.component.css',
+    imports: [CommonModule, FormsModule],
+    })
 export class JserverComponent implements OnInit {
 
   apiService = inject(ApiService)

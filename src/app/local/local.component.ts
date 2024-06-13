@@ -5,11 +5,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { DatePipe } from '@angular/common';
+import { AOpComponent } from '../a-op/a-op.component';
 
 @Component({
   selector: 'app-local',
   standalone: true,
-  imports: [ReactiveFormsModule, MatButtonModule, MatInputModule, MatSelectModule],
+  imports: [ReactiveFormsModule, MatButtonModule, MatInputModule, MatSelectModule, AOpComponent],
   templateUrl: './local.component.html',
   styleUrl: './local.component.css'
 })
@@ -23,41 +24,49 @@ export class LocalComponent {
     firstName: [null, Validators.required],
     lastName: [null, Validators.required],
     colour: [null, Validators.required],
-    lastUsed: ""
+    lastUpdated: [null]
   });
 
   //  myData: any = [];
   myStored: any = [];
-  myLog:string[] = []
+  //myLog:string = ''
 
   ngOnInit(): void { // read in stored values
     var myStored = JSON.parse(this.localStore.getData('myData')!)
-    this.myLog = JSON.parse(this.localStore.getData('log')!)
-    var lastItem:string = this.myLog[this.myLog.length-1]
-    
+    console.log("read from local", myStored)
+
+
     this.myForm.patchValue({
       firstName: myStored.firstName,
       lastName: myStored.lastName,
       colour: myStored.colour,
-      lastUsed: lastItem
+      lastUpdated: myStored.lastDate
     })
 
   }
 
   onSubmit() {
     const myTime = this.pipe.transform(Date.now(), 'medium')!;
-   
-    this.myLog.push(myTime)
-    console.log(this.myForm.value)
-    this.localStore.saveData('myData', JSON.stringify(this.myForm.value))
-    this.localStore.saveData('log', JSON.stringify(this.myLog))
-  }
-  
-  test() {
-  this.localStore.removeData('lastUsed')
+    var myArray = { ...this.myForm.value, 'lastDate': myTime }
+    console.log(myArray)
+    this.localStore.saveData('myData', JSON.stringify(myArray))
   }
 
-  test2(){
-    
+  test() {
+    var before = { foo: "bar" };
+    var current = before;
+    current.foo = "hello";
+    console.log(before, current)
+    console.log(before === current);
+    // => true
+  }
+
+  test2() {
+    var before = { foo: "bar" };
+    var current = before;
+    current = { foo: "hello" };
+    console.log(before, current)
+    console.log(before === current);
+    // => false
   }
 }

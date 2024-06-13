@@ -60,6 +60,11 @@ export const APP_ROUTES: Routes = [
                 loadComponent: () => import('./address/address.component').then(c => c.AddressComponent)
 
             },
+            {
+                path: 'buttons', title: 'buttons',
+                loadComponent: () => import('./buttons/buttons.component').then(c => c.ButtonsComponent)
+
+            },
         ]
     }
 

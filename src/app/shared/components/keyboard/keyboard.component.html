@@ -2,7 +2,7 @@
 <div class="keyboard">
     <mat-grid-list cols="3" rowHeight="1:1">
         @for (item of myKeys; track item) {
-        <mat-grid-tile><button mat-raised-button color="primary" (click)="addDigit(item)">{{item}}
+        <mat-grid-tile><button mat-fab color="primary" (click)="addDigit(item)">{{item}}
             </button></mat-grid-tile>
         }
         <mat-grid-tile></mat-grid-tile>
