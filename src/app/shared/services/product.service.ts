@@ -19,7 +19,9 @@ export class ProductService {
 
   // get the products list.
   getProducts() {
+    console.log("products:", this.products())
     return this.products;
+    
   }
 
   // add a new product to the products list.

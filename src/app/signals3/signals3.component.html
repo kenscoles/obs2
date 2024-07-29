@@ -1,0 +1,28 @@
+<p >Line 1</p>
+<p>Line 2</p>
+<p>Line 3</p>
+<button (click)="tryData()">Try data</button>
+<h3>MySig: {{mySig()|json}}</h3>
+<h3>NewSig: {{newSig()|json}}</h3>
+<hr>
+<input type="text" (keyup)="search($event)" />
+<h2>User: {{searchSig()}}</h2>
+
+@if(articlesSig()){
+@for (item of articlesSig().posts; track item.id) {
+    <h1> Id: {{ item.id }} </h1>
+    <p> Title: {{ item.title }} </p>
+    <p> ------------------------------------ </p>
+  }
+}
+
+
+@if(articlesSig()){
+  @for (item of articlesSig().posts; track item.id) {
+      <h1> Id: {{ item.id }} </h1>
+      <input type ="text" [value]="item.id">
+      <p> Title: {{ item.title }} </p>
+      <p> ------------------------------------ </p>
+    }
+  }
+ 

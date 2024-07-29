@@ -17,7 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 export class DebounceComponent {
   public inputValue!: string; // added
   
-  public handleDebouncedKeyUp(event: { target: { value: any; }; }): void {
+  public handleDebouncedKeyUp(event: { target: { value: string; }; }): void {
     this.inputValue = `Making API call with: ${event.target.value}`;
   }
 

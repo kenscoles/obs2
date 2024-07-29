@@ -9,6 +9,7 @@ export class LocalService {
 
   public saveData(key: string, value: string) {
     localStorage.setItem(key, value);
+    console.log("value:", value)
   }
 
   public getData(key: string) {

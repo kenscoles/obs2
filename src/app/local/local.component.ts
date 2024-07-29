@@ -47,8 +47,8 @@ export class LocalComponent {
 
   onSubmit() {
     const myTime = this.pipe.transform(Date.now(), 'medium')!;
-    var myArray = { ...this.myForm.value, 'lastDate': myTime }
-    console.log(myArray)
+    var myArray = { ...this.myForm.value, 'lastDate': myTime }///////////
+    console.log(this.myForm.value)
     this.localStore.saveData('myData', JSON.stringify(myArray))
   }
 

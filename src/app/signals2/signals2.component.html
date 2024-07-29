@@ -1,0 +1,10 @@
+
+<input type="text" (keyup)="search($event)" />
+<h2>User: {{searchSig()}}</h2>
+<!-- {{articlesSig()|json}} -->
+  @for (article of articlesSig(); track article.title) {
+   <h1> Id: {{ article.id }} </h1>
+   <p> Title: {{ article.title }} </p>
+  <p> Completed: {{ article.completed }} </p>
+   <p> ------------------------------------ </p>
+} 

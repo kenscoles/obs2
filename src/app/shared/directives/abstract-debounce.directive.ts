@@ -1,12 +1,12 @@
-import { Directive, OnDestroy, Input, Output, EventEmitter } from "@angular/core";
+import { Directive, OnDestroy, Input, Output, EventEmitter, input } from "@angular/core";
 import { Subject } from "rxjs";
 import { takeUntil, debounceTime, distinctUntilChanged, tap } from "rxjs/operators";
 
 @Directive()
 export abstract class AbstractDebounceDirective implements OnDestroy {
-  @Input()
-  public debounceTime: number;
-
+  //@Input()
+  //public debounceTime: number;
+  debounceTime = input<number>(2000) // 2 seconds is the default
   @Output()
   public onEvent: EventEmitter<any>;
 
@@ -14,7 +14,7 @@ export abstract class AbstractDebounceDirective implements OnDestroy {
   protected subscription$: Subject<void>;
 
   constructor() {
-    this.debounceTime = 500;
+    //this.debounceTime = 2000;
     this.onEvent = new EventEmitter<any>();
     this.emitEvent$ = new Subject<any>();
     this.subscription$ = new Subject<void>();
@@ -24,7 +24,7 @@ export abstract class AbstractDebounceDirective implements OnDestroy {
     this.emitEvent$
       .pipe(
         takeUntil(this.subscription$),
-        debounceTime(this.debounceTime),
+        debounceTime(this.debounceTime()),
         distinctUntilChanged(),
         tap(value => this.emitChange(value))
       )

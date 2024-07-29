@@ -1,0 +1,64 @@
+<button (click)="tryData()">Try data</button>
+<div class="page_wrap">
+  <mat-form-field>
+    <mat-label>Search by title</mat-label>
+    <input matInput [ngModel]="searchInput()" (ngModelChange)="searchProduct($event)" />
+  </mat-form-field>
+  <div>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>First</th>
+          <th>Last</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of filteredProducts(); track item.name){
+        <tr>
+          <td>{{ item.fields.First.stringValue }}</td>
+          <td>{{ item.fields.Last.stringValue }}</td>
+          <td><button (mouseover)="filter(item)">details</button></td>
+        </tr>
+        }
+      </tbody>
+    </table>
+
+  </div>
+  <button mat-raised-button color="primary" [disabled]="currentPage() === 1" (click)="goToPrevPage()">
+    Prev
+  </button>
+  {{ currentPage() }}
+  <button mat-raised-button color="primary" [disabled]="isNextPageNotAvailable()" (click)="goToNextPage()">
+    Next
+  </button>
+</div>
+<hr>
+<button (click)="test()">Test date</button>
+
+<button (click)="toggleShow()">show / hide</button>
+
+
+<!-- <h3>MySig: {{mySig()|json}}</h3> -->
+
+<!-- @if(showData()) -->
+@if(false) {
+<div class="page_wrap">
+  @for (item of mySig(); track item.name) {
+
+  <button (click)="filter(item)">{{item.fields.First.stringValue}}
+    {{item.fields.Last.stringValue}} </button>
+  <p> ------------------------------------------------------------------ </p>
+  }
+</div>
+}
+<div class="page_wrap_2">
+  @if(single()){
+  <p> Document: {{ (single().name).split("/").pop() }} </p>
+  <p> First Name: {{ single().fields.First.stringValue }} </p>
+  <p> Last Name: {{ single().fields.Last.stringValue }}</p>
+  <p> Created: {{ (single().created) }} </p>
+  <p> Updated: {{ single().updated }} </p>
+  <p><button (click)="goBack()">close</button></p>
+  }
+</div>

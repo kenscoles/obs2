@@ -1,30 +1,36 @@
-import {  ChangeDetectionStrategy, Component } from '@angular/core';
+import {  ChangeDetectionStrategy,ChangeDetectorRef, Component } from '@angular/core';
 import { BOpComponent } from '../b-op/b-op.component';
 
 @Component({
   selector: 'a-op',
   standalone: true,
   imports: [BOpComponent],
-  //changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <p>
+    <div>This is the A component</div>
+    <div>
+User Name: {{user.name}} Number: {{num}}     
+    </div>
+
     <button (click)="changeName()">A Change name</button>
     <button (click)="changeNum()">A Change number</button>
     <b-op [user]="user" [value]="num"></b-op>
-
-    </p>
   `,
-  styles: ``
+  styles: `:host {
+    display: block;
+    background-color: rgb(236, 227, 128);
+   }`
 })
 export class AOpComponent {
- user = { name: 'A' };
+ user = { name: 'Ben' };
  num = 1;
+ constructor(private cdr: ChangeDetectorRef) {}
 
   changeName() {
-    
-    //this.num+=1;
-    this.user.name = 'B';
-
+    if(this.user.name == 'Ben')
+    {this.user.name = 'Ezra';}
+    else this.user.name = 'Ben';
+this.cdr.detectChanges()
      console.log("from A",this.user)
    /*  this.user = {
       ...this.user,

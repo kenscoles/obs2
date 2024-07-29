@@ -51,8 +51,18 @@ export const APP_ROUTES: Routes = [
 
             },
             {
-                path: 'jserver', title: 'jserver',
-                loadComponent: () => import('./jserver/jserver.component').then(c => c.JserverComponent)
+                path: 'profile', title: 'profile',
+                loadComponent: () => import('./profile/profile.component').then(c => c.ProfileComponent)
+
+            },
+            {
+                path: 'profile/:id', title: 'prDetail',
+                loadComponent: () => import('./profile-detail/profile-detail.component').then(c => c.ProfileDetailComponent)
+
+            },
+            {
+                path: 'info-detail/:id', title: 'infoDetail',
+                loadComponent: () => import('./info-detail/info-detail.component').then(c => c.InfoDetailComponent)
 
             },
             {
@@ -63,6 +73,26 @@ export const APP_ROUTES: Routes = [
             {
                 path: 'buttons', title: 'buttons',
                 loadComponent: () => import('./buttons/buttons.component').then(c => c.ButtonsComponent)
+
+            },
+            {
+                path: 'signals', title: 'signals',
+                loadComponent: () => import('./signals/signals.component').then(c => c.SignalsComponent)
+
+            },
+            {
+                path: 'signals2', title: 'signals2',
+                loadComponent: () => import('./signals2/signals2.component').then(c => c.Signals2Component)
+
+            },
+            {
+                path: 'signals3', title: 'signals3',
+                loadComponent: () => import('./signals3/signals3.component').then(c => c.Signals3Component)
+
+            },
+            {
+                path: 'signals4', title: 'signals4',
+                loadComponent: () => import('./signals4/signals4.component').then(c => c.Signals4Component)
 
             },
         ]
