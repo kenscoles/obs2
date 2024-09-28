@@ -10,4 +10,14 @@
 <div>
     <button (click)="test()">Test</button>
 </div>
-{{counter()}}
+Test2: {{test2()}}
+
+<!-- Products: {{productService.products()|json}}
+<p>Prod: {{productService.products()[0].name}}</p>
+<p>Prod: {{productService.products()[0].price}}</p> -->
+<h3>Fruits in stock</h3>
+@for (product of productService.products(); track product; let i = $index) {
+ <ul>
+    <li>{{product.name}} : {{product.price}}</li>   
+</ul>
+}

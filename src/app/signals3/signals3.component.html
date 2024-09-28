@@ -1,28 +1,33 @@
-<p >Line 1</p>
+<p>Line 1</p>
 <p>Line 2</p>
 <p>Line 3</p>
 <button (click)="tryData()">Try data</button>
 <h3>MySig: {{mySig()|json}}</h3>
+@if(newSig){
 <h3>NewSig: {{newSig()|json}}</h3>
+}
+@else {
+  <h3>NewSig = no data yet</h3>
+}
 <hr>
 <input type="text" (keyup)="search($event)" />
 <h2>User: {{searchSig()}}</h2>
 
 @if(articlesSig()){
 @for (item of articlesSig().posts; track item.id) {
-    <h1> Id: {{ item.id }} </h1>
-    <p> Title: {{ item.title }} </p>
-    <p> ------------------------------------ </p>
-  }
+<h1> Id: {{ item.id }} </h1>
+<input type="text" [value]="item.id">
+<p> Title: {{ item.title }} </p>
+<p> ------------------------------------ </p>
 }
-
-
-@if(articlesSig()){
-  @for (item of articlesSig().posts; track item.id) {
-      <h1> Id: {{ item.id }} </h1>
-      <input type ="text" [value]="item.id">
-      <p> Title: {{ item.title }} </p>
-      <p> ------------------------------------ </p>
-    }
-  }
- 
+}
+<button (click)="test()">Test Inj context</button>
+<h4>You need to pass destroyRef whenever you use takeUntilDestroyed() outside of an injection context.
+   You can think of injection context as a space in your code that runs before the instantiation of a 
+   class, in this case a component. The constructor of a class is an example of an injection context 
+   because the code inside the constructor runs before the class is instanciated. Another example are 
+   class field declarations, whenever you declare a field you must either asign it a value directly 
+   or assign it within the constructor, this is because the value must be known at instantiation,
+   which tells us that this assignment happens within an injection context.</h4>
+<a target=”_blank” href = "https://stackoverflow.com/questions/76264067/takeuntildestroyed-can-only-be-used-within-an-injection-context">
+Examples</a>

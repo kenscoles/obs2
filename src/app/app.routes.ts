@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
 //import { AppComponent } from "./app.component";
-
+import { LocalComponent } from "./local/local.component";
 export const APP_ROUTES: Routes = [
     {
         path: '',
@@ -36,6 +36,11 @@ export const APP_ROUTES: Routes = [
 
             },
             {
+                path: 'jserver', title: 'jserver',
+                loadComponent: () => import('./jserver/jserver.component').then(c => c.JserverComponent)
+
+            },
+            {
                 path: 'kb-test', title: 'kb-test',
                 loadComponent: () => import('./kb-test/kb-test.component').then(c => c.KbTestComponent)
 
@@ -47,7 +52,7 @@ export const APP_ROUTES: Routes = [
             },
             {
                 path: 'local', title: 'local',
-                loadComponent: () => import('./local/local.component').then(c => c.LocalComponent)
+                component: LocalComponent // NOT LAZY LOADED
 
             },
             {

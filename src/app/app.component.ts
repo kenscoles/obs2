@@ -17,6 +17,7 @@ import { ComponentService } from './shared/services/component.service';
 export class AppComponent {
   constructor() { }
   router = inject(Router)
+  
   componentService = inject(ComponentService)
 
   ngOnInit(): void {

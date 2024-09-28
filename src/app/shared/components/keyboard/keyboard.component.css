@@ -26,7 +26,7 @@
       margin-top: 15%;
     }
     .keyboard {
-      width: 50%;
+      width: 70%;
     }
   }
   @media all and (max-width: 450px){
@@ -35,7 +35,7 @@
       margin-top: 10%;
     }
     .keyboard {
-      width: 70%;
+      width: 80%;
     }
     .myButton {
       width: 30%;

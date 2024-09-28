@@ -10,10 +10,12 @@ import { InfoRecord } from '../models/info';
 export class ProfileService {
   userProfileSignal = signal<any | null>(null); // set null initial value
   infoSignal = signal<InfoRecord[]>([]); // set empty initial value
+  infoSignal2 = signal<any[]>([]); // set empty initial value
   userProfileSignal2 = signal<any | null>(null); // set null initial value
   mySub: Subscription | undefined
   mySub2: Subscription | undefined
   mySub3: Subscription | undefined
+  mySub4: Subscription | undefined
   url: string = '';
   baseUrl: string = 'http://localhost/'; //'http://192.168.1.199/
 
@@ -64,6 +66,7 @@ export class ProfileService {
     this.mySub?.unsubscribe()
     this.mySub2?.unsubscribe()
     this.mySub3?.unsubscribe()
+    this.mySub4?.unsubscribe()
     console.log("subs unsubscribed")
   }
 
@@ -79,12 +82,33 @@ export class ProfileService {
           return of(1);
         })
       )
-    this.mySub3 = $obs.subscribe(profile => {
+    this.mySub3 = $obs.subscribe((profile): void => {
       console.log('API Response:', <InfoRecord[]>profile)
       //this.infoSignal.set(<InfoRecord[]>profile);
       this.infoSignal.set(<InfoRecord[]>profile);
       console.log('set infoSignal', this.infoSignal());
-
     })
   }
+  /////
+  
+  getRecords2(search:string) {
+   //var search = "Dan"
+    console.log('trigger fetchdata');
+    this.url = `http://localhost:3000/user/${search}`;
+     var $obs = this.http
+      .get<any[]>(this.url)
+      .pipe(
+        retry(3),
+        catchError((error) => {
+          console.error('Error fetching data:', error);
+          return of( [{ id: "NONE", name: "NOT FOUND","email": "ERROR", "phone":error.statusText}]);
+        })
+      )
+    this.mySub4 = $obs.subscribe((profile): void => {
+      console.log('API Response:', <any[]>profile)
+      this.infoSignal2.set(<any[]>profile);
+      console.log('set infoSignal2', this.infoSignal2());
+    })
+  }
+  /////
 }

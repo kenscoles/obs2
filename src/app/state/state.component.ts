@@ -1,4 +1,4 @@
-import { Component, OnInit, computed } from '@angular/core';
+import { Component, OnInit, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product, ProductService } from '../shared/services/product.service';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -7,19 +7,20 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
   selector: 'app-state',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  providers: [ProductService],
+  providers: [],
   templateUrl: './state.component.html',
   styleUrl: './state.component.scss'
 })
 export class StateComponent {
 
 // products list by signal
-products = this.productService.getProducts();
+//products = this.productService.getProducts();
+//myProducts = this.productService.products()
 form!: FormGroup;
 submitted: boolean = false;
 
 constructor(
-  private productService: ProductService,
+ public productService: ProductService,
   private formBuilder: FormBuilder
 ) {
   this.createForm()
@@ -96,7 +97,7 @@ remove(key: number) {
 
 // Computed signal to calculate the all products total price
 totalPrice = computed(() => {
-  return this.products().reduce((acc, curr) => acc + curr.price, 0);
+  //return this.products().reduce((acc, curr) => acc + curr.price, 0);
 });
 
 

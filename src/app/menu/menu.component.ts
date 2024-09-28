@@ -1,6 +1,7 @@
 import { Component, inject, DestroyRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ComponentService } from '../shared/services/component.service';
+import { ProductService } from '../shared/services/product.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +13,7 @@ import { ComponentService } from '../shared/services/component.service';
 export class MenuComponent {
 
   componentService = inject(ComponentService)
-
+  products = inject(ProductService)
   constructor() {
     this.componentService.isMenu.set(true) // this is the menu
     const destroyRef = inject(DestroyRef);

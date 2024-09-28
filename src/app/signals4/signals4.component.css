@@ -3,33 +3,50 @@ p,h1,h2 {
 }
 .page_wrap
 {
-    border: 1px solid black;
+    border: 1px solid blue;
     width: 300px;
-    height: 260px;
+    height: 350px;
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
     background-color: cadetblue;
-    text-align: justify;
+    text-align:center;
 }
 .page_wrap_2
 {
     border: 1px solid black;
-    width: 350px;
-    height: 140px;
+    width: 300px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: black;
+    color:rgb(223, 210, 101);
+}
+
+.centred
+{ 
+    width: 300px;
+    height: 50px;
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
     background-color: cadetblue;
+    
+    text-align: center;
 }
 :host {
     .summary {
       padding: 10px;
     }
     table {
-      max-width: 200px;
+      max-width: 300px;
     }
     table th {
       text-align: left;
     }
   }
+  button {
+    margin-right: 10px;
+  }
+

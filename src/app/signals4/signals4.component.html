@@ -1,11 +1,14 @@
-<button (click)="tryData()">Try data</button>
+<div class="centred">
+<button mat-raised-button color="primary" (click)="tryData()">Try data</button>
+<button mat-raised-button color="primary" (click)="cancel()">Cancel function</button>
+</div>
 <div class="page_wrap">
   <mat-form-field>
-    <mat-label>Search by title</mat-label>
+    <mat-label>Search by first name</mat-label>
     <input matInput [ngModel]="searchInput()" (ngModelChange)="searchProduct($event)" />
   </mat-form-field>
   <div>
-    <table style="width: 100%">
+    <table style="width: 100%;  text-align:justify;">
       <thead>
         <tr>
           <th>First</th>
@@ -18,40 +21,30 @@
         <tr>
           <td>{{ item.fields.First.stringValue }}</td>
           <td>{{ item.fields.Last.stringValue }}</td>
-          <td><button (mouseover)="filter(item)">details</button></td>
+          <!-- <td><button (mouseover)="filter(item)">details</button></td> -->
+          <td><button mat-mini-fab color="primary" (click)="filter(item)">
+            <mat-icon>edit</mat-icon>
+          </button></td>
+          <td><button mat-mini-fab color="warn" (click)="filter(item)">
+            <mat-icon>delete</mat-icon>
+          </button></td>
         </tr>
         }
       </tbody>
     </table>
-
   </div>
-  <button mat-raised-button color="primary" [disabled]="currentPage() === 1" (click)="goToPrevPage()">
-    Prev
+  <button mat-mini-fab [disabled]="currentPage() === 1" (click)="goToPrevPage()">
+    <mat-icon>arrow_left</mat-icon>
   </button>
-  {{ currentPage() }}
-  <button mat-raised-button color="primary" [disabled]="isNextPageNotAvailable()" (click)="goToNextPage()">
-    Next
+  page {{ currentPage() }}  
+  <button mat-mini-fab [disabled]="isNextPageNotAvailable()" (click)="goToNextPage()">
+    <mat-icon>arrow_right</mat-icon>
   </button>
 </div>
 <hr>
 <button (click)="test()">Test date</button>
 
-<button (click)="toggleShow()">show / hide</button>
 
-
-<!-- <h3>MySig: {{mySig()|json}}</h3> -->
-
-<!-- @if(showData()) -->
-@if(false) {
-<div class="page_wrap">
-  @for (item of mySig(); track item.name) {
-
-  <button (click)="filter(item)">{{item.fields.First.stringValue}}
-    {{item.fields.Last.stringValue}} </button>
-  <p> ------------------------------------------------------------------ </p>
-  }
-</div>
-}
 <div class="page_wrap_2">
   @if(single()){
   <p> Document: {{ (single().name).split("/").pop() }} </p>
@@ -59,6 +52,9 @@
   <p> Last Name: {{ single().fields.Last.stringValue }}</p>
   <p> Created: {{ (single().created) }} </p>
   <p> Updated: {{ single().updated }} </p>
-  <p><button (click)="goBack()">close</button></p>
+  <br>
+  <button style="text-align:center;" mat-raised-button color="primary" (click)="goBack()">close</button>
   }
 </div>
+
+<button mat-button>Success</button>

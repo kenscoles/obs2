@@ -5,7 +5,9 @@ export interface Product {
   price: number;
 }
 
-@Injectable()
+@Injectable(
+  {providedIn: 'root'}
+)
 export class ProductService {
   products = signal<Product[]>(
     [
@@ -18,12 +20,12 @@ export class ProductService {
   constructor() { }
 
   // get the products list.
-  getProducts() {
+ /*  getProducts() {
     console.log("products:", this.products())
     return this.products;
     
   }
-
+ */
   // add a new product to the products list.
   addProduct(product: Product) {
     this.products.set([...this.products(),
