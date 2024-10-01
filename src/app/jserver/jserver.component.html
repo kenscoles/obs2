@@ -1,7 +1,7 @@
 <h4>{{title}}</h4>
-
+<h6>Add new Record to be done - see append.js</h6>
 <div>
-    <button (click)="addPerson()">Add new record</button>
+    <button disabled (click)="addPerson()">Add new record</button>
 </div>
 <div>
     {{status}}
@@ -12,24 +12,24 @@
         <tr>
             <th>idx</th>
             <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Age</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
         </tr>
     </thead>
     <tbody>
         <!--
     <tr *ngFor="let person of people;">
         -->
-        @for (person of people; track $index) {
+        @for (employee of people; track $index) {
         <tr>
             <td>{{$index}}</td>
-            <td>{{person.id}}</td>
-            <td><input [(ngModel)]="person.fname" /></td>
-            <td><input [(ngModel)]="person.lname" /></td>
-            <td><input [(ngModel)]="person.age" /></td>
-            <td><button (click)="updatePerson(person)">Update</button></td>
-            <td><button (click)="deletePerson(person.id)">Del</button></td>
+            <td>{{employee.id}}</td>
+            <td><input [(ngModel)]="employee.name" /></td>
+            <td><input [(ngModel)]="employee.email" /></td>
+            <td><input [(ngModel)]="employee.phone" /></td>
+            <td><button (click)="updatePerson(employee)">Update</button></td>
+            <td><button (click)="deletePerson(employee.id)">Del</button></td>
         </tr>
         }
     </tbody>

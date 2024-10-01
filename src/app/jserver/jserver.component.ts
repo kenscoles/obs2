@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../shared/services/api.service';
-import { Person } from '../shared/models/person';
+import { Person, Employee } from '../shared/models/person';
 import { catchError, finalize, throwError } from 'rxjs';
 
 @Component({ selector: 'app-jserver',
@@ -15,13 +15,14 @@ export class JserverComponent implements OnInit {
 
   apiService = inject(ApiService)
   title = 'httpGet Example';
-  people?:Person[];////////////////////////
-  person = new Person();
+  people?:Employee[];////////////////////////
+  person = new Employee();
   status?:any;
 
   ngOnInit(): void {
     this.refreshPeople();
     this.status = 'data loaded';
+    console.log("new employee:", this.person)
   }
 
   refreshPeople() {
@@ -79,14 +80,14 @@ export class JserverComponent implements OnInit {
   });
 
   } 
-  updatePerson(person:any) {
+  updatePerson(person:Employee) {
     //this.person.id = id;
     this.apiService.updatePerson(person)
     .subscribe({
       next: data => {
           this.status = 'update successful';
           this.refreshPeople();
-          this.person = new Person();// re-initialise
+          this.person = new Employee();// re-initialise
       },
       error: (error: { message: any; }) => {
           this.status = error.message;
