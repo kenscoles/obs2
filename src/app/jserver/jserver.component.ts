@@ -4,17 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { ApiService } from '../shared/services/api.service';
 import { Person, Employee } from '../shared/models/person';
 import { catchError, finalize, throwError } from 'rxjs';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({ selector: 'app-jserver',
     standalone: true,
     templateUrl: './jserver.component.html',
     styleUrl: './jserver.component.css',
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, MatButtonModule],
     })
 export class JserverComponent implements OnInit {
 
   apiService = inject(ApiService)
-  title = 'httpGet Example';
+  title = 'Express Test Data';
   people?:Employee[];////////////////////////
   person = new Employee();
   status?:any;
@@ -47,6 +48,10 @@ export class JserverComponent implements OnInit {
   }
  
   addPerson() {
+    //this.person.id = 66;
+    this.person.email = ""
+    this.person.name = ""
+    this.person.phone = ""
     this.apiService.addPerson(this.person)
       .subscribe(data => {
         console.log(data);

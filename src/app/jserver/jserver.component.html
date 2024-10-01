@@ -1,7 +1,6 @@
 <h4>{{title}}</h4>
-<h6>Add new Record to be done - see append.js</h6>
 <div>
-    <button disabled (click)="addPerson()">Add new record</button>
+    <button mat-flat-button (click)="addPerson()">Add new record</button>
 </div>
 <div>
     {{status}}
@@ -26,7 +25,7 @@
             <td>{{$index}}</td>
             <td>{{employee.id}}</td>
             <td><input [(ngModel)]="employee.name" /></td>
-            <td><input [(ngModel)]="employee.email" /></td>
+            <td><input style="width: 200px;" [(ngModel)]="employee.email" /></td>
             <td><input [(ngModel)]="employee.phone" /></td>
             <td><button (click)="updatePerson(employee)">Update</button></td>
             <td><button (click)="deletePerson(employee.id)">Del</button></td>

@@ -34,11 +34,11 @@ export class ApiService {
     )
   }
 
-  addPerson(person:Employee): Observable<any> {
+  addPerson(person:Employee): Observable<any> { // id is calculated in server
     const headers = { 'content-type': 'application/json'}  
-    const body=JSON.stringify(person);
+    const body = JSON.stringify(person);
     console.log(body)
-    return this.http.post(`${this.baseURL}url`, body,{'headers':headers})
+    return this.http.post(`${this.baseURL}add`, body,{'headers':headers})
   }
 
   deletePerson(id:string): Observable<any> {
